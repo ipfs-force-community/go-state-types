@@ -16,6 +16,10 @@ type systemActorMigrator struct {
 	ManifestData cid.Cid
 }
 
+func NewSystemActorMigrator(outCodeCID cid.Cid, manifestData cid.Cid) systemActorMigrator {
+	return systemActorMigrator{OutCodeCID: outCodeCID, ManifestData: manifestData}
+}
+
 func (m systemActorMigrator) MigratedCodeCID() cid.Cid {
 	return m.OutCodeCID
 }
